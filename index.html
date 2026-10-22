@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hollow Creek — Mafia Mystery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">A SOCIAL DEDUCTION GAME</p>
+        <h1>Hollow <span>Creek</span></h1>
+      </div>
+      <div class="top-stats">
+        <div><span class="stat-label">ROUND</span><strong id="round-number">1</strong></div>
+        <div><span class="stat-label">ALIVE</span><strong id="alive-count">6</strong></div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="town-panel panel">
+        <div class="panel-heading">
+          <div><p class="eyebrow">THE TOWN</p><h2 id="phase-title">Welcome to Hollow Creek</h2></div>
+          <div class="timer-pill" id="timer">READY</div>
+        </div>
+        <p class="phase-message" id="phase-message">Gather your courage. Someone in town is hiding a secret.</p>
+        <div class="town-map" id="town-map" aria-label="Town map">
+          <div class="road road-h"></div><div class="road road-v"></div>
+          <div class="building bakery"><span>🥐</span><b>Bakery</b></div>
+          <div class="building library"><span>📚</span><b>Library</b></div>
+          <div class="building clinic"><span>🩺</span><b>Clinic</b></div>
+          <div class="building hall"><span>🏛️</span><b>Meeting Hall</b></div>
+          <div class="fountain">⛲</div>
+          <div class="map-label">HOLLOW CREEK SQUARE</div>
+          <div id="map-characters" class="map-characters"></div>
+        </div>
+        <div class="map-legend"><span><i class="dot living"></i> Living</span><span><i class="dot eliminated"></i> Eliminated</span><span>🌙 Night · ☀️ Day</span></div>
+      </section>
+
+      <aside class="side-column">
+        <section class="panel role-card">
+          <p class="eyebrow">YOUR SECRET ROLE</p>
+          <div class="role-icon" id="role-icon">❔</div>
+          <h2 id="player-role">Not assigned yet</h2>
+          <p id="role-description">Start a round to receive your secret role.</p>
+          <div id="role-team" class="team-tag">WAITING</div>
+        </section>
+
+        <section class="panel players-panel">
+          <div class="panel-heading compact"><div><p class="eyebrow">TOWN REGISTER</p><h2>Characters</h2></div><span id="player-count" class="subtle">6 players</span></div>
+          <div id="player-list" class="player-list"></div>
+        </section>
+      </aside>
+
+      <section class="panel action-panel">
+        <div class="panel-heading compact"><div><p class="eyebrow">YOUR MOVE</p><h2 id="action-heading">Ready to begin?</h2></div></div>
+        <p id="action-instructions" class="subtle">Choose the number of players, then begin the game.</p>
+        <div id="action-area" class="action-area">
+          <label class="setup-label" for="player-total">Players in town</label>
+          <select id="player-total">
+            <option value="6">6 players</option><option value="7">7 players</option><option value="8">8 players</option>
+            <option value="9">9 players</option><option value="10">10 players</option><option value="11">11 players</option><option value="12">12 players</option>
+          </select>
+          <button id="start-button" class="primary-button">✨ Start a new round</button>
+          <p class="small-note">You play as Dani. The other townspeople are computer-controlled characters.</p>
+        </div>
+      </section>
+
+      <section class="panel feed-panel">
+        <div class="panel-heading compact"><div><p class="eyebrow">TOWN BULLETIN</p><h2>What's happening</h2></div><button id="clear-feed" class="text-button">Clear</button></div>
+        <div id="notification-feed" class="feed" aria-live="polite"><div class="feed-entry"><span class="feed-dot"></span><p>Welcome to Hollow Creek. Start a round when you're ready.</p></div></div>
+      </section>
+    </main>
+    <footer><span>HOLLOW CREEK</span><span>Trust is a dangerous game.</span></footer>
+  </div>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <div id="modal-symbol" class="modal-symbol">🌙</div>
+      <p class="eyebrow" id="modal-kicker">A SECRET REVEALED</p>
+      <h2 id="modal-title">Your role</h2>
+      <p id="modal-copy"></p>
+      <button id="modal-button" class="primary-button">Continue</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
