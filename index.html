@@ -1,45 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Duck Duck Goose: Mafia Edition (Core)</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<canvas id="game"></canvas>
-
-<div id="menu" class="overlay">
-  <div class="panel">
-    <h1>DUCK DUCK GOOSE</h1>
-    <h2>MAFIA EDITION</h2>
-    <canvas id="preview" width="64" height="96"></canvas>
-    <div class="row"><button id="rerollBtn" class="btn small">Reroll look</button></div>
-    <div class="row"><label for="nameInput">Your name</label>
-      <input id="nameInput" type="text" maxlength="12" placeholder="Sprout" autocomplete="off"></div>
-    <div class="row"><label for="countInput" id="countOut">Players: 8</label>
-      <input id="countInput" type="range" min="5" max="16" value="8"></div>
-    <button id="startBtn" class="btn">START</button>
-    <div class="hint">WASD / Arrow keys: walk &middot; M: map<br>Touch: use the joystick</div>
-  </div>
-</div>
-
-<div id="roleOverlay" class="overlay hidden">
-  <div class="cardWrap">
-    <div class="card" id="card">
-      <div class="face front"><div class="qmark">?</div><div>Your secret role</div></div>
-      <div class="face back" id="cardBack">
-        <div id="roleIcon"></div><div id="roleName"></div>
-        <p id="roleText"></p><p id="roleMates"></p>
-      </div>
-    </div>
-  </div>
-  <button id="roleGo" class="btn" disabled>LET'S GO!</button>
-</div>
-
-<div id="joy" class="hidden"><div id="knob"></div></div>
-<div id="actions" class="hidden"><button id="mapBtn" class="btn">M</button></div>
-
-<script src="game.js"></script>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fluffy Birb</title>
+<link rel="stylesheet" href="style.css"></head><body>
+<div id="wrap"><div id="stage">
+<canvas id="c" width="360" height="640"></canvas>
+<div id="hud"><button id="bm">🔊</button><button id="bp" aria-label="Pause">⏸</button></div>
+<div class="ov on" id="menu"><h1>Fluffy Birb</h1>
+ <div class="card"><canvas id="pv" width="100" height="64"></canvas>
+  <div class="row" id="cols"></div><div class="row" id="types"></div><div class="row" id="diffs"></div></div>
+ <button class="big" id="play">Play</button></div>
+<div class="ov" id="pause"><h2>Paused</h2><button class="big" id="res">Resume</button><button id="rst">Restart</button><button id="mm">Main menu</button></div>
+<div class="ov" id="over"><h1>Fluffy Birb</h1><h2>Game over</h2><p id="fs"></p><p id="bs"></p><button class="big" id="retry">Retry</button><button id="mm2">Main menu</button></div>
+</div></div>
+<script src="game.js"></script></body></html>
